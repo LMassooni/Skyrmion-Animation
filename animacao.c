@@ -4,18 +4,21 @@
 #include <math.h>
 #include <unistd.h>
 #include <time.h>
-#define FRANDOM (rand()/(RAND_MAX+1.0))
+
+#define FRANDOM (rand()/(RAND_MAX+1.0)) //Função para um número aleatório entre 0 e 1
 #define PI M_PI
-#define L 70
-#define N (L*L)
-#define D 1.
-#define J 1.
-#define B 0
-#define H 0.4
-#define p 500000
+#define L 70 // Tamanho lateral da rede
+#define N (L*L) // Número de spins
+#define D 1. // Interação de DM
+#define J 1. // Interação de troca
+#define B 0 // Anisotropia
+#define H 0.4 // Campo magnético externo 
+#define p 500000  // Monte-Carlo steps
+
 
 int right[N], left[N], up[N], down[N];
 const int prog_bar_length = 30;
+
 
 void update(double progress,double total) {
 	int num = progress*prog_bar_length/total;
@@ -52,7 +55,7 @@ void vizinhos(){
 }
 }
 
-
+//Parametros para o gnuplot
 void initGnuplot(){
   printf("set term wxt size %d,%d\n", 1000, 1000);
   printf("set size -1\n");
@@ -66,6 +69,7 @@ void initGnuplot(){
   
 }
 
+// Função que vai dar os valores para o gnuplot fazer o vector plot e contour plot
 void printGnuplot(double s[N][2]){
   int ix, iy;
   double sz,sx,sy;
@@ -87,6 +91,7 @@ printf("%d %d %lf\n", ix, iy, sz);
   }
  printf("e\n");
  }
+
 
 void metropolis_otimizado(double s[N][2],double temp, double *ene){
 double dH,dHx,dHy,dHz;
