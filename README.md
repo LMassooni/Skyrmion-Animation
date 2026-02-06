@@ -1,5 +1,6 @@
 # Skyrmion-Animation
-Animação de um sistema de spins sujeitos a interação de troca e de Dziyaloshinskii-Moryia
+Animação de um sistema de spins sujeitos a interação de troca e de Dziyaloshinskii-Moryia.
+
 Basicamente, usei o gnuplot para fazer uma animação em tempo real da evolução de um sistema sujeito a interação de troca ferromagnetica e a interação anti-simétrica (DM) 
 usando simulações de Monte Carlo, com Algoritmo de Metrópolis. No código é usado também um algorítmo de over-relaxation para acelerar a dinâmica das estruturas moduladas que
 emergem da competição de ambas as interações: Um skyrmion.
