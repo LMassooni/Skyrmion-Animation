@@ -1,23 +1,40 @@
-# Skyrmion-Animation
-Animação de um sistema de spins sujeitos a interação de troca e de Dziyaloshinskii-Moryia.
+# Spin System Animation with Exchange and Dzyaloshinskii-Moriya Interactions
 
-Basicamente, usei o gnuplot para fazer uma animação em tempo real da evolução de um sistema sujeito a interação de troca ferromagnetica e a interação anti-simétrica (DM) 
-usando simulações de Monte Carlo, com Algoritmo de Metrópolis. No código é usado também um algorítmo de over-relaxation para acelerar a dinâmica das estruturas moduladas que
-emergem da competição de ambas as interações: Um skyrmion.
+This project provides an animation of a spin system subject to both **exchange interactions** and **Dzyaloshinskii-Moriya (DM) interactions**.
 
-A depender dos parâmetros internos (temperatura T, campo magnético externo H e anisotropia B) é possível termos diferentes fases moduladas. A primeira chama-se fase helicoidal
-caracterizada por faixas em duas dimensões. A segunda é a fase de skyrmions, uma fase de "bolhas" caracterizada por um centro antiparalelo com as bordas, com um padrão de redemoinho entre
-ambas.
+Essentially, I used **gnuplot** to create a real-time animation of the evolution of a system under ferromagnetic exchange and antisymmetric (DM) interactions, using **Monte Carlo simulations** with the **Metropolis algorithm**. The code also implements an **over-relaxation algorithm** to accelerate the dynamics of the modulated structures that emerge from the competition between the two interactions: a **skyrmion**.
 
-O arquivo é auto-consistente. Basta baixá-lo, compilar com:
+## Phases
 
+Depending on the internal parameters (temperature `T`, external magnetic field `H`, and anisotropy `B`), different modulated phases can appear:
+
+- **Helical phase**: characterized by stripe patterns in two dimensions.  
+- **Skyrmion phase**: a "bubble" phase with antiparallel cores and edges, exhibiting a vortex-like pattern between them.
+
+## Running the Code
+
+The file is self-contained. To run it, simply download it, compile with:
+
+```bash
 gcc animacao.c -lm -O3
-
-e executar o executável, passando para o gnuplot com um pipe:
-
+```
+and execute the program, piping it to gnuplot:
+```
 ./a.out | gnuplot
+```
+## Modifying the Plots
 
-Modificações nos plots podem ser feitos em duas funções dentro do código:
-initGnuplot() -> Possui as características do Plot: tamanho da janela, desativar os nomes dos eixos, os ticks do gráfico, a barra do colourmap, etc.
+Plot settings can be modified in two functions inside the code:
 
-printGnuplot() -> Tem como objetivo fazer o gráfico própriamente dito, traduzindo um array unidimensional em um grid 2d, produzindo primeiro o colourmap e depois o vector plot em cima
+initGnuplot() – Contains the plot characteristics: window size, axis labels, tick marks, colorbar display, etc.
+
+printGnuplot() – Generates the actual plot, converting a 1D array into a 2D grid, producing the color map first and then overlaying the vector plot.
+
+Note: This project is intended for educational and research purposes in the study of spin dynamics and skyrmion formation.
+
+## Stripes pattern simulation
+![stripes gif](gifs/stripes.gif)
+
+
+## Skyrmion lattice simulation
+![skyrmions gif](gifs/skyrmions.gif)
