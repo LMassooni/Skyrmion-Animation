@@ -37,4 +37,4 @@ Note: This project is intended for educational and research purposes in the stud
 
 
 ## Skyrmion lattice simulation
-![skyrmions gif](skyrmions.gif)
+![skyrmions gif](skyrmion.gif)
