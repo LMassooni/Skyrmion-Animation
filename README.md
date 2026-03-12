@@ -33,8 +33,8 @@ printGnuplot() – Generates the actual plot, converting a 1D array into a 2D gr
 Note: This project is intended for educational and research purposes in the study of spin dynamics and skyrmion formation.
 
 ## Stripes pattern simulation
-![stripes gif](gifs/stripes.gif)
+![stripes gif](helicoidal.gif)
 
 
 ## Skyrmion lattice simulation
-![skyrmions gif](gifs/skyrmions.gif)
+![skyrmions gif](skyrmions.gif)
